@@ -5,7 +5,20 @@
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
 module.exports = {
-  theme: {},
+  theme: {
+    backgroundColor: {
+      'white': '#ffffff',
+      'primary': '#FF9F0E'
+    },
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+       '50%': '50%',
+       '16': '4rem',
+       '90': '60rem'
+    }
+  },
   variants: {},
   plugins: [],
   purge: {
