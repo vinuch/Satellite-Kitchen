@@ -10,7 +10,7 @@
         <img src="../../assets/images/cart.svg" alt="Shopping cart icon">
       </li>
       <li class="px-8 font-thin text-base ">
-        <button class="text-black bg-white px-8 py-2 rounded-full font-semibold">Order Now</button>
+        <button class="bg-white font-medium py-2 px-8 shadow-md hover:shadow-xl transition duration-500 transform hover:-translate-y-1 rounded-full text-black text-sm">Order Now</button>
       </li>
     </ul>
   </div>
