@@ -1,8 +1,8 @@
 <template>
-  <div class="text-center my-12 mx-32">
+  <div class="text-center sm:12 px-4 sm:mx-10">
     <h3 class="text-primary text-sm">Menu</h3>
     <h2 class="font-bold text-2xl py-2">Explore Our Best Menu </h2>
-    <p class="w-4/12 mx-auto text-sm">its through mistakes that you actually can grow you get rid of everything that is not essential to get bad </p>
+    <p class="sm:w-4/12 mx-auto text-sm">its through mistakes that you actually can grow you get rid of everything that is not essential to get bad </p>
     
     <div class="flex flex-wrap justify-around mx-auto my-16">
       <FoodCard />

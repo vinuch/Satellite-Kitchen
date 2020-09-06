@@ -1,5 +1,5 @@
 <template>
-  <div class="home w-screen">
+  <div class="home">
     <div>
       <NavBar />
       <Banner />
@@ -20,6 +20,7 @@ import About from '../components/landingPage/About'
 import Menu from '../components/landingPage/Menu'
 import CustomerReview from '../components/landingPage/CustomerReview'
 import Footer from '../components/landingPage/Footer'
+
 export default {
   components: {
     Banner,

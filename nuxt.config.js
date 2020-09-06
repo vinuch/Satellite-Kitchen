@@ -23,7 +23,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'image/x-icon', href: 'https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700&display=swap' },
+      { rel: 'stylesheet', href: 'https://unpkg.com/aos@2.3.1/dist/aos.css' }
     ]
   },
   /*
@@ -36,8 +37,7 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-  ],
+  plugins: [{ src: "@/plugins/aos", ssr: false }],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components

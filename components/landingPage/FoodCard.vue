@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white my-4 rounded-tr-lg rounded-bl-lg transition duration-500 transform hover:-translate-y-1 ease-in-out hover:scale-105 cursor-pointer" style="width: 30%">
+  <div class="bg-white shadow-md my-4 rounded-tr-lg rounded-bl-lg transition duration-500 transform hover:-translate-y-1 ease-in-out hover:scale-105 cursor-pointer w-100 sm:w-2/7 mx-1" >
     <img
       class="w-full rounded-tr-lg rounded-bl-lg h-56"
       src="../../assets/images/nkwobi.jpg"

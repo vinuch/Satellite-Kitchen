@@ -1,26 +1,28 @@
 <template>
-  <div class="mx-32 my-32">
+  <div class="sm:mx-32 px-4 my-32">
     <h3 class="text-primary text-sm text-center">Testimonial</h3>
 
     <h1 class="text-center text-3xl my-2 font-medium">
       What Our Customers are saying
     </h1>
-    <p class="text-sm mx-auto text-center w-6/12 mb-16">
+    <p data-aos="fade-up" class="text-sm mx-auto text-center sm:w-6/12 mb-16">
       To succeed you must believe. When you believe, you will succeed. You
       smart, you loyal, you a genius. The key is to enjoy life, because they
       don’t want you to enjoy life
     </p>
-    <div class="flex left">
+    <div class="flex my-6 items-center static left">
       <img
-        class="w-24 h-24 rounded-full"
+        data-aos="zoom-in"
+        data-aos-delay="700"
+        class="w-16 h-16 sm:w-24 sm:h-24 rounded-full"
         src="../../assets/images/user.svg"
         alt="user image"
       />
-      <div class="relative bg-white h-32 w-4/12 rounded-lg mx-8 p-4">
+      <div data-aos="fade-left"
+        data-aos-delay="900" class="relative bg-white h-100 w-64 ml-4 sm:w-4/12 rounded-lg sm:mx-8 p-4">
         <div>
-          <span class="text-3xl font-bold">"</span>
 
-          <p class="inline text-sm">
+          <p class="inline text-xs">
             To succeed you must believe. When you believe, you will succeed. You
             smart, you loyal, you a genius. The key is to enjoy life, because
             they don’t want you to enjoy life
@@ -31,22 +33,25 @@
       </div>
     </div>
 
-    <div class="flex right flex-row-reverse">
+    <div class="flex right flex-row-reverse my-6 items-center static ">
       <img
-        class="w-24 h-24 rounded-full"
+        data-aos="zoom-in"
+        data-aos-delay="700"
+        class="w-16 h-16 sm:w-24 sm:h-24 rounded-full"
         src="../../assets/images/user.svg"
         alt="user image"
       />
-      <div class="relative bg-white h-32 w-4/12 rounded-lg mx-8 p-4">
-         <div>
-          <span class="text-3xl font-bold">"</span>
+      <div data-aos="fade-left"
+        data-aos-delay="900" class="relative bg-white h-100 w-64 mr-4 sm:w-4/12 rounded-lg sm:mx-8 p-4">
+        <div>
 
-          <p class="inline text-sm">
+          <p class="inline text-xs">
             To succeed you must believe. When you believe, you will succeed. You
             smart, you loyal, you a genius. The key is to enjoy life, because
             they don’t want you to enjoy life
           </p>
         </div>
+
         <div class="arrow"></div>
       </div>
     </div>
