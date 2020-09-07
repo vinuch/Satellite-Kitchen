@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home overflow-x-hidden">
     <div>
       <NavBar />
       <Banner />
       <InfoBar />
       <About />
-      <Menu />
+      <Menu :menu="data"/>
       <CustomerReview />
       <Footer />
     </div>
@@ -20,6 +20,7 @@ import About from '../components/landingPage/About'
 import Menu from '../components/landingPage/Menu'
 import CustomerReview from '../components/landingPage/CustomerReview'
 import Footer from '../components/landingPage/Footer'
+import axios from 'axios'
 
 export default {
   components: {
@@ -30,7 +31,12 @@ export default {
     Menu,
     CustomerReview,
     Footer
-  }
+  },
+    async asyncData({ params }) {
+      const { data } = await axios.get(`http://localhost:1337/items`)
+      console.log(data[0].image[0].url, 'hroo');
+      return {data: data}
+    }
 }
 </script>
 
