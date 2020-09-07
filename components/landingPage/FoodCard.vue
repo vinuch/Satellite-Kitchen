@@ -11,7 +11,7 @@
         <h3 class="text-left text-2xl font-semibold">{{item.title}}</h3>
         <p class="text-xs text-left">Served with 1 Bottled water</p>
       </div>
-      <span class="text-2xl font-semibold">₦{{ item.Price }}</span>
+      <span class="text-2xl font-semibold">₦{{ item.price }}</span>
     </div>
     <p class="text-left px-4 text-sm mb-6">
       {{item.description}}
