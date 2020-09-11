@@ -1,5 +1,8 @@
 
 export default {
+  env: {
+    strapiBaseUri: process.env.API_URL || "http://localhost:1337"
+  },
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -25,6 +28,23 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700&display=swap' },
       { rel: 'stylesheet', href: 'https://unpkg.com/aos@2.3.1/dist/aos.css' }
+    ],
+    
+    script: [
+      {
+        src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+        type: "text/javascript"
+      },
+      {
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
+        type: "text/javascript"
+      },
+      {
+        src:
+          "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
+        type: "text/javascript"
+      }
     ]
   },
   /*
@@ -65,7 +85,20 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    // baseURL: 'http://localhost:1337',
+  },
+  // publicRuntimeConfig: {
+  //   axios: {
+  //     browserBaseURL: process.env.BROWSER_BASE_URL
+  //   }
+  // },
+
+  // privateRuntimeConfig: {
+  //   axios: {
+  //     baseURL: process.env.BASE_URL
+  //   }
+  // },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

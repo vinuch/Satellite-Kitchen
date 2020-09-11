@@ -1,8 +1,8 @@
 <template>
   <div class="relative pb-8 bg-white shadow-md my-4 rounded-tr-lg rounded-bl-lg transition duration-500 transform hover:-translate-y-1 ease-in-out hover:scale-105 cursor-pointer w-100 sm:w-2/7 mx-1" >
     <img
-      class="w-full object-center object-cover rounded-tr-lg rounded-bl-lg h-56"
-      :src="'http://localhost:1337' + item.image[0].url"
+      class="imgdrag w-full object-center object-cover rounded-tr-lg rounded-bl-lg h-56"
+      :src="item.image"
       :alt="item.title"
     />
 
@@ -22,7 +22,7 @@
         <img class="w-6" src="../../assets/images/star.svg" alt="rating star" />
         <img class="w-6" src="../../assets/images/star.svg" alt="rating star" />
       </div>
-      <button @click="onAddtoBag(item.id)" title="add to bag" class="bg-primary px-4 h-100 rounded-tl-lg">
+      <button @click="onAddtoBag(item._id)" title="add to bag" class="bg-primary px-4 h-100 rounded-tl-lg">
         <img class="w-8 mx-auto" src="../../assets/images/bag.svg" alt="bag icon" />
         <span class="text-xs text-white my-2">add to bag</span>
       </button>

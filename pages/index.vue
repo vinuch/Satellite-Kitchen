@@ -33,7 +33,7 @@ export default {
     Footer
   },
     async asyncData({ params }) {
-      const { data } = await axios.get(`http://localhost:1337/items`)
+      const { data } = await axios.get(`https://satellite-kitchen.herokuapp.com/api/menu-items`)
       console.log(data[0].image[0].url, 'hroo');
       return {data: data}
     }

@@ -5,7 +5,7 @@
     <p class="sm:w-4/12 mx-auto text-sm">its through mistakes that you actually can grow you get rid of everything that is not essential to get bad </p>
     
     <div class="flex flex-wrap justify-around mx-auto my-16">
-      <FoodCard v-for="item in menu" :item="item" :key="item.id" @clicked="addItem"/>
+      <FoodCard v-for="item in menu" :item="item" :key="item._id" @clicked="showAddModal"/>
       <!-- {{data}} -->
 
     
@@ -13,7 +13,7 @@
     <modal name="add-item-modal" adaptive scrollable height="auto">
         <p class="py-2">add item to Bag</p>
         <div class="flex flex-wrap sm:flex-no-wrap items-center justify-between mx-6 border rounded-md p-2 mt-2 mb-6">
-          <img class="mx-auto w-32" :src="'http://localhost:1337' + modalItem.image[0].url" :alt="modalItem.title">
+          <img class="mx-auto w-32" :src="modalItem.image" :alt="modalItem.title">
           <div class="w-full ml-4">
             <p class="text-left font-bold text-xl py-2">1 plate of {{ modalItem.title}}</p>
             <div class="text-left flex items-end justify-between my-2">
@@ -32,7 +32,7 @@
                 <input type="number" name="amount" class="w-12 border rounded text-center" value="2" min="2" v-model="newItem.meat[0].amount">
               </div>
 
-              <button class="bg-black px-2 rounded text-xs text-white">+</button>
+              <button class="bg-black px-2 rounded text-xs text-white">+ extra</button>
 
             </div>
 
@@ -52,7 +52,7 @@
                 <input type="number" name="amount" class="w-12 border rounded text-center" value="1" v-model="newItem.swallow[0].amount">
               </div>
 
-              <button class="bg-black px-2 rounded text-xs text-white">+</button>
+              <button class="bg-black px-2 rounded text-xs text-white">+ extra</button>
 
             </div>
 
@@ -62,9 +62,13 @@
         </div>
         <div class="text-right p-2 mx-6 ">
           <h4 class="font-bold text-xl">Summary</h4>
-            <p class="text-right  py-2">1 plate of <span class="font-bold">{{ modalItem.title}}</span>  with <span class="font-bold"> {{newItem.meat[0].amount}} {{newItem.meat[0].name}}</span> and <span class="font-bold"> {{newItem.swallow[0].amount}} {{newItem.swallow[0].name}}</span>  - ₦{{modalItem.price}}</p>
+            <div class="flex justify-end items-center">
+              <p class="text-right  py-2">1 plate of <span class="font-bold">{{ modalItem.title}}</span>  with <span class="font-bold"> {{newItem.meat[0].amount}} {{newItem.meat[0].name}}</span> and <span class="font-bold"> {{newItem.swallow[0].amount}} {{newItem.swallow[0].name}}</span></p>
+              <p> - ₦{{modalItem.price}}</p>
+            </div>
+            
             <p>Total - ₦{{modalItem.price}}</p>
-            <button class="bg-primary text-white text-sm px-4 py-2 mt-2 rounded">Add to Bag</button>
+            <button @click="addtoCart(modalItem)" class="bg-primary text-white text-sm px-4 py-2 mt-2 rounded">Add to Bag</button>
           <p></p>
         </div>
     </modal>
@@ -76,6 +80,7 @@
 <script>
 import FoodCard from "./FoodCard"
 import axios from 'axios'
+import { mapActions } from 'vuex'
 
   export default {
     props: ['menu'],
@@ -98,6 +103,9 @@ import axios from 'axios'
       }
     },
     methods: {
+      ...mapActions({
+        addItem: 'cart/addItem'
+      }),
       checkIsSoup() {
         console.log(this.modalItem.title.includes('soup'));
         return this.modalItem.title.toLowerCase().includes('soup')
@@ -108,11 +116,16 @@ import axios from 'axios'
         hide () {
             this.$modal.hide('add-item-modal');
         },
-        addItem(id) {
-          const found = this.menu.find(item => item.id == id)
+        showAddModal(id) {
+          const found = this.menu.find(item => item._id == id)
           this.modalItem = found
 
           this.show()
+        },
+        addtoCart(item) {
+          this.hide()
+          this.addItem(item)
+          console.log(item)
         }
     },
 

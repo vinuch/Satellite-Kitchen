@@ -3,8 +3,22 @@ export const state = () => ({
 })
 
 export const mutations = {
-  add(state, item) {
+  ADD_ITEM(state, item) {
     state.cartList.push(item)
   },
 
+}
+
+export const actions = {
+  addItem({commit}, item) {
+    commit('ADD_ITEM', item)
+  },
+
+}
+
+
+export const getters = {
+  getCartList: (state) => {
+    return state.cartList
+  }
 }

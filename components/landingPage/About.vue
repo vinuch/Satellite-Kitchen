@@ -3,7 +3,7 @@
     <div class="relative w-11/12 sm:w-6/12">
       <img class="about-img absolute top-0 left-0 banner-img " src="../../assets/images/jollof.png" alt="Shopping cart icon">
     </div>
-    <div  data-aos="fade-left" data-aos-delay="900" class="sm:w-6/12 sm:px-8 mt-56 mb-32 sm:m-0">
+    <div  data-aos="fade-left" data-aos-delay="200" class="sm:w-6/12 sm:px-8 mt-56 mb-32 sm:m-0">
       <h3 class="text-primary text-sm font-semibold">About</h3>
       <h2 class="font-bold text-4xl py-4">Food Is an Important Part Of a balanced Diet</h2>
       <p class="sm:w-7/12 text-sm leading-7 text-left">
