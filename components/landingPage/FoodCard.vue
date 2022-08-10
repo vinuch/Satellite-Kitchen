@@ -1,5 +1,5 @@
 <template>
-  <div class="relative pb-8 bg-white shadow-md my-4 rounded-tr-lg rounded-bl-lg transition duration-500 transform hover:-translate-y-1 ease-in-out hover:scale-105 cursor-pointer w-100 sm:w-2/7 mx-1" >
+  <div v-if="item" class="relative pb-8 bg-white shadow-md my-4 rounded-tr-lg rounded-bl-lg transition duration-500 transform hover:-translate-y-1 ease-in-out hover:scale-105 cursor-pointer w-100 sm:w-2/7 mx-1" >
     <img
       class="imgdrag w-full object-center object-cover rounded-tr-lg rounded-bl-lg h-56"
       :src="item.image"

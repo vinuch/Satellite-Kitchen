@@ -10,7 +10,7 @@
 
     
     </div>
-    <modal name="add-item-modal" adaptive scrollable height="auto">
+    <modal v-if="modalItem" name="add-item-modal" adaptive scrollable height="auto">
         <p class="py-2">add item to Bag</p>
         <div class="flex flex-wrap sm:flex-no-wrap items-center justify-between mx-6 border rounded-md p-2 mt-2 mb-6">
           <img class="mx-auto w-32" :src="modalItem.image" :alt="modalItem.title">
